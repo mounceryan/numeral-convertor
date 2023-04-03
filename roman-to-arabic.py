@@ -1,35 +1,33 @@
-Python 3.11.0 (v3.11.0:deaf509e8f, Oct 24 2022, 14:43:23) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
-Type "help", "copyright", "credits" or "license()" for more information.
->>> #Inputting a number made of Roman numerals
-... 
-... input_number_input = input("Enter a Roman numeral: ")
-... validation = ""
-... 
-... input_number = input_number_input
-... 
-... #Find the last digit
-... 
-... if input_number[-1] == "I" and (len(input_number) == 1 or input_number[-2] != "I" and input_number[-2] != "V"):
-...     units = 1
-...     input_number_without_units = input_number[:-1]
-... elif input_number[-1] == "I" and input_number[-2] == "I" and (len(input_number) == 2 or input_number[-3] != "I" and input_number[-3] != "V"): 
-...     units = 2
-...     input_number_without_units = input_number[:-2]
-... elif input_number[-1] == "I" and input_number[-2] == "I" and input_number[-3] == "I" and (len(input_number) == 3 or input_number[-4] != "I" and input_number[-4] != "V"): 
-...     units = 3
-...     input_number_without_units = input_number[:-3]
-... elif len(input_number) >= 2 and input_number[-1] == "V" and input_number[-2] == "I":
-...     units = 4
-...     input_number_without_units = input_number[:-2]
-... elif input_number[-1] == "V":
-...     units = 5
-...     input_number_without_units = input_number[:-1]
-... elif len(input_number) >= 2 and input_number[-2] == "V" and input_number[-1] == "I":
-...     units = 6
-...     input_number_without_units = input_number[:-2]
-... elif len(input_number) >= 3 and input_number[-3] == "V" and input_number[-2] == "I" and input_number[-1] == "I":
-...     units = 7
-...     input_number_without_units = input_number[:-3]
+#Inputting a number made of Roman numerals
+
+input_number_input = input("Enter a Roman numeral: ")
+validation = ""
+
+input_number = input_number_input
+
+#Find the last digit
+
+if input_number[-1] == "I" and (len(input_number) == 1 or input_number[-2] != "I" and input_number[-2] != "V"):
+    units = 1
+    input_number_without_units = input_number[:-1]
+elif input_number[-1] == "I" and input_number[-2] == "I" and (len(input_number) == 2 or input_number[-3] != "I" and input_number[-3] != "V"): 
+    units = 2
+    input_number_without_units = input_number[:-2]
+elif input_number[-1] == "I" and input_number[-2] == "I" and input_number[-3] == "I" and (len(input_number) == 3 or input_number[-4] != "I" and input_number[-4] != "V"): 
+    units = 3
+    input_number_without_units = input_number[:-3]
+elif len(input_number) >= 2 and input_number[-1] == "V" and input_number[-2] == "I":
+    units = 4
+    input_number_without_units = input_number[:-2]
+elif input_number[-1] == "V":
+    units = 5
+    input_number_without_units = input_number[:-1]
+elif len(input_number) >= 2 and input_number[-2] == "V" and input_number[-1] == "I":
+    units = 6
+    input_number_without_units = input_number[:-2]
+elif len(input_number) >= 3 and input_number[-3] == "V" and input_number[-2] == "I" and input_number[-1] == "I":
+    units = 7
+    input_number_without_units = input_number[:-3]
 elif len(input_number) >= 4 and input_number[-4] == "V" and input_number[-3] == "I" and input_number[-2] == "I" and input_number[-1] == "I":
     units = 8
     input_number_without_units = input_number[:-4]
@@ -121,7 +119,7 @@ if len(input_number_without_tens) >=1:
 #Find the fourth to last digit
 
 thousands = ""
-
+input_number_without_hundreds =""
 if len(input_number_without_hundreds) >=1:
     if input_number_without_hundreds[-1] == "M" and len(input_number_without_hundreds) == 1:
         thousands = "1"
@@ -150,5 +148,3 @@ if validation == "Not a valid Roman numeral.":
     print(validation)
 else:
     print("The Arabic numeral for the Roman numeral " + input_number + " is " + str(thousands) + str(hundreds) + str(tens) + str(units))
-    
-SyntaxError: multiple statements found while compiling a single statement
