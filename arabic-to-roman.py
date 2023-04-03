@@ -1,5 +1,3 @@
-Python 3.11.0 (v3.11.0:deaf509e8f, Oct 24 2022, 14:43:23) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
-Type "help", "copyright", "credits" or "license()" for more information.
 #Inputting a number made of Arabic numerals
 
 input_number = int(input("Enter a number: "))
@@ -68,41 +66,42 @@ else:
 
     #Finding the hundreds part of numeral
 
-...     if len(str(number)) > 2: #if the number is greater than two digits
-...         if int(number_digits[-3]) == 1:
-...             hundreds = "C"
-...         elif int(number_digits[-3]) == 2:
-...             hundreds = "CC"
-...         elif int(number_digits[-3]) == 3:
-...             hundreds = "CCC"
-...         elif int(number_digits[-3]) == 4:
-...             hundreds = "CD"
-...         elif int(number_digits[-3]) == 5:
-...             hundreds = "D"
-...         elif int(number_digits[-3]) == 6:
-...             hundreds = "DC"
-...         elif int(number_digits[-3]) == 7:
-...             hundreds = "DCC"
-...         elif int(number_digits[-3]) == 8:
-...             hundreds = "DCCC"
-...         elif int(number_digits[-3]) == 9:
-...             hundreds = "CM"
-...         elif int(number_digits[-3]) == 0:
-...             hundreds = ""
-...     else:
-...         hundreds = ""
-... 
-...     #Finding the thousands part of numeral
-... 
-...     if len(str(number)) > 3: #if the number is greater than three digits
-...         if int(number_digits[-4]) == 1:
-...             thousands = "M"
-...         elif int(number_digits[-4]) == 2:
-...             thousands = "MM"
-...         elif int(number_digits[-4]) == 3:
-...             thousands = "MMM"
-...     else:
-...         thousands = ""
-...         
-...     #Printing the Roman numeral
-...     
+    if len(str(number)) > 2: #if the number is greater than two digits
+        if int(number_digits[-3]) == 1:
+            hundreds = "C"
+        elif int(number_digits[-3]) == 2:
+            hundreds = "CC"
+        elif int(number_digits[-3]) == 3:
+            hundreds = "CCC"
+        elif int(number_digits[-3]) == 4:
+            hundreds = "CD"
+        elif int(number_digits[-3]) == 5:
+            hundreds = "D"
+        elif int(number_digits[-3]) == 6:
+            hundreds = "DC"
+        elif int(number_digits[-3]) == 7:
+            hundreds = "DCC"
+        elif int(number_digits[-3]) == 8:
+            hundreds = "DCCC"
+        elif int(number_digits[-3]) == 9:
+            hundreds = "CM"
+        elif int(number_digits[-3]) == 0:
+            hundreds = ""
+    else:
+        hundreds = ""
+
+    #Finding the thousands part of numeral
+
+    if len(str(number)) > 3: #if the number is greater than three digits
+        if int(number_digits[-4]) == 1:
+            thousands = "M"
+        elif int(number_digits[-4]) == 2:
+            thousands = "MM"
+        elif int(number_digits[-4]) == 3:
+            thousands = "MMM"
+    else:
+        thousands = ""
+        
+    #Printing the Roman numeral
+    
+    print("The Roman numeral for the number " + str(input_number) + " is " + str(thousands) + str(hundreds) + str(tens) + str(units))
